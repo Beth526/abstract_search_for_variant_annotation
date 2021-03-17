@@ -1,5 +1,3 @@
-#This is an streamlit app that can be run by downloading Streamlit and
-#typing streamlit run clinvar_streamlit.py in the terminal
 
 import streamlit as st
 import pickle
