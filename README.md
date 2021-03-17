@@ -1,14 +1,14 @@
 # abstract_search_for_variant_annotation
 ### neural networks to score PubMed search results for similarity to evidence abstracts from ClinVar or CIViC 
 
-The goal of this project is to make an app that will search PubMed for abstracts of interest, and then return the results scored for similarity to either abstracts from ClinVar or CIViC. This would be useful for variant annotation, because users could search a gene, disease name or drug, and easily find abstracts relevant to annotation efforts. I removed gene and gene product names with a NER before training the model to try to reduce bias toward certain gene. 
+The goal of this project is to create an app that will search PubMed for abstracts of interest, and then return the results scored for similarity to either abstracts from ClinVar or CIViC databases. This would be useful for variant annotation, because users could search a gene, disease name or drug, and easily find abstracts relevant to annotation. I removed gene and gene product names with a NER before training the model to try to reduce bias toward certain genes. 
 
 ClinVar focuses on classifying germline mutations as benign or pathogenic for disease, and CIViC focuses on gathering prognostic, functional, and effect on therapy response for somatic mutations in cancer.
 
-I didn't include journal information for predictions, there are a lot of journals but some are clearly more represented
+Journal information is currently not included for predictions, but some are clearly more represented:
 ![Top ClinVar Journals](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/JournalPieChart.jpeg)
 
-The streamlit app is working with the given files and requirements.txt, and I want to make a docker container for it and try to deploy it. The app shows the top relevant articles from the search and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
+The streamlit app will run with the pickled files and packages from requirements.txt. Next I want to make a docker container for it and try to deploy it. The app returns information on the top scoring articles under the ClinVar or CIViC model and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
 
 ### Test set results ClinVar model
 - 1 = abstract from ClinVar
