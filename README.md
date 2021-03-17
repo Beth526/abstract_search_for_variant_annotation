@@ -24,5 +24,8 @@ The model also predicts quickly because it's pretty small. I first tried using D
 
 The streamlit app will run with the pickled files and packages from requirements.txt. Next I want to make a docker container for it and try to deploy it. The app returns information on the top scoring articles under the ClinVar or CIViC model and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
 
+Screenshot part 1:
 ![App part 1](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/App%20top%20of%20page.png)
+
+Screenshot part 2:
 ![App part 2](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/App%20bottom%20of%20page.png)
