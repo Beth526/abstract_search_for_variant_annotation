@@ -1,7 +1,7 @@
 # abstract_search_for_variant_annotation
 ### neural networks to score PubMed search results for similarity to evidence abstracts from ClinVar or CIViC 
 
-The goal of this project is to make an app that will search PubMed for abstracts of interest, and then return the results scored for similarity to either abstracts from ClinVar or CIViC. This would be useful for variant annotation, because users could search a gene, disease name or drug, and easily find abstracts relevant to annotation efforts. 
+The goal of this project is to make an app that will search PubMed for abstracts of interest, and then return the results scored for similarity to either abstracts from ClinVar or CIViC. This would be useful for variant annotation, because users could search a gene, disease name or drug, and easily find abstracts relevant to annotation efforts. I removed gene and gene product names with a NER before training the model to try to reduce bias toward certain gene. 
 
 ClinVar focuses on classifying germline mutations as benign or pathogenic for disease, and CIViC focuses on gathering prognostic, functional, and effect on therapy response for somatic mutations in cancer.
 
