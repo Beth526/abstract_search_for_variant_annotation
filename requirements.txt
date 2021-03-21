@@ -1,5 +1,5 @@
-pandas
-streamlit
+pandas==1.2.2
+streamlit==0.69.2
 tensorflow==1.14.0
 beautifulsoup4==4.9.3
 numpy==1.19.2

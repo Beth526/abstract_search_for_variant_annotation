@@ -1,3 +1,5 @@
+#This is an streamlit app that can be run by downloading Streamlit and
+#typing streamlit run clinvar_streamlit.py in the terminal
 
 import streamlit as st
 import pickle
@@ -12,22 +14,22 @@ import base64
 
 
 #import word2vec model (embedding size = 30)
-with open('w2v_model.pickle', 'rb') as read_file:
+with open('/data/data/w2v_model.pickle', 'rb') as read_file:
     w2V_model = pickle.load(read_file)
 
 #import the civic tokenizer
-with open('tokenizer_civic.pickle', 'rb') as read_file:
+with open('/data/data/tokenizer_civic.pickle', 'rb') as read_file:
     tokenizer_civic = pickle.load(read_file)
 
 #import the clinvar tokenizer
-with open('tokenizer_clinvar.pickle', 'rb') as read_file:
+with open('/data/data/tokenizer_clinvar.pickle', 'rb') as read_file:
     tokenizer_clinvar = pickle.load(read_file)
 
 #import the civic model
-civic_model = tf.keras.models.load_model('civic_model')
+civic_model = tf.keras.models.load_model('/data/data/civic_model')
 
 #import the clinvar model
-clinvar_model = tf.keras.models.load_model('clinvar_model')
+clinvar_model = tf.keras.models.load_model('/data/data/clinvar_model')
 
 #define NCBI EUtilities Query function
 def pubmed_fetch(user_input):
