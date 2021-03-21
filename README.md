@@ -8,8 +8,6 @@ ClinVar focuses on classifying germline mutations as benign or pathogenic for di
 Journal information is currently not included for predictions, but some are clearly more represented:
 ![Top ClinVar Journals](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/JournalPieChart.jpeg)
 
-The streamlit app will run with the pickled files and packages from requirements.txt. Next I want to make a docker container for it and try to deploy it. The app returns information on the top scoring articles under the ClinVar or CIViC model and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
-
 ### Test set results ClinVar model
 - 1 = abstract from ClinVar
 - 0 = random abstract from 2018
@@ -23,3 +21,11 @@ The streamlit app will run with the pickled files and packages from requirements
 ![Test set results CIViC model](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/CIViC%20model%20stats.png)
 
 The model also predicts quickly because it's pretty small. I first tried using DistilBERT embeddings but that was slow and didn't contain a lot of tokens in scientific abstracts. Instead I used a word2vec model I made earlier with 300k PubMed abstracts for Metis project 3. 
+
+The streamlit app will run with the pickled files and packages from requirements.txt. Next I want to make a docker container for it and try to deploy it. The app returns information on the top scoring articles under the ClinVar or CIViC model and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
+
+Screenshot part 1:
+![App part 1](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/App%20top%20of%20page.png)
+
+Screenshot part 2:
+![App part 2](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/App%20bottom%20of%20page.png)
