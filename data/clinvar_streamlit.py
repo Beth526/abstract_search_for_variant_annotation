@@ -1,5 +1,4 @@
-#This is an streamlit app that can be run by downloading Streamlit and
-#typing streamlit run clinvar_streamlit.py in the terminal
+#This is an Streamlit app
 
 import streamlit as st
 import pickle
@@ -32,18 +31,20 @@ civic_model = tf.keras.models.load_model('/data/data/civic_model')
 clinvar_model = tf.keras.models.load_model('/data/data/clinvar_model')
 
 #define NCBI EUtilities Query function
-def pubmed_fetch(user_input):
+def pubmed_fetch(*args):
     st.write('Fetching abstracts from Pubmed (~30 sec depending on number of results)')
     
     base='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term='
+    for i in args:
+        print(i)
     
-    query = '"'+str(user_input)+'"'
-    #if len(list(args)) == 1:
-    #    query = args
-    #if len(args) >= 1:
-    #    for i in range(len(args) - 1):
-    #        query += args[i] + "+"
-    #    query += args[-1]
+    if len(list(args)) == 1:
+        query = args
+    if len(args) >= 1:
+        query=''
+        for i in range(len(args) - 1):
+            query += args[i] + "+"
+        query += args[-1]
     
     end = '&retmax=5000&usehistory=y'
     
