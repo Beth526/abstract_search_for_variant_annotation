@@ -5,6 +5,11 @@ The goal of this project is to create an app that will search PubMed for abstrac
 
 ClinVar focuses on classifying germline mutations as benign or pathogenic for disease, and CIViC focuses on gathering prognostic, functional, and effect on therapy response for somatic mutations in cancer.
 
+I put this app into a docker container: https://hub.docker.com/r/beth526/abstract_app
+And you can run it with 'docker run -p 8501:8501 beth526/abstract_app' 
+
+Searches can be things like 'ion channel AND epilepsy', 'polycystic kidney disease', 'FGFR AND bladder cancer', 'olaparib OR rucaparib AND BRCA1'
+
 Journal information is currently not included for predictions, but some are clearly more represented:
 ![Top ClinVar Journals](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/JournalPieChart.jpeg)
 
@@ -22,7 +27,7 @@ Journal information is currently not included for predictions, but some are clea
 
 The model also predicts quickly because it's pretty small. I first tried using DistilBERT embeddings but that was slow and didn't contain a lot of tokens in scientific abstracts. Instead I used a word2vec model I made earlier with 300k PubMed abstracts for Metis project 3. 
 
-The streamlit app will run with the pickled files and packages from requirements.txt. Next I want to make a docker container for it and try to deploy it. The app returns information on the top scoring articles under the ClinVar or CIViC model and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
+The app returns information on the top scoring articles under the ClinVar or CIViC model and allows users to download the full table, including abstrast, title, journal, pmid, and score columns.
 
 Screenshot part 1:
 ![App part 1](https://github.com/Beth526/abstract_search_for_variant_annotation/blob/main/images/App%20top%20of%20page.png)
